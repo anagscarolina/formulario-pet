@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro Pet</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        color: #333;
+        margin: 20px;
+      }
+      h1 {
+        color: #333;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      form {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      fieldset {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 15px;
+        margin-bottom: 20px;
+      }
+      legend {
+        font-weight: bold;
+        color: #555;
+        padding: 0 10px;
+      }
+      label {
+        display: block; 
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="date"],
+      textarea {
+        width: calc(100% - 22px); 
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box; 
+      }
+      input[type="radio"] {
+        margin-right: 5px;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+      button[type="reset"] {
+        background-color: #f44336;
+      }
+      button:hover {
+        opacity: 0.9;
+      }
+      
+      .radio-group {
+        display: flex; 
+        align-items: center;
+        margin-bottom: 15px;
+      }
+      .radio-group label {
+        margin-right: 15px;
+        margin-bottom: 0; 
+        display: inline-block; 
+        font-weight: normal; 
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Cadastro de Pets</h1>
+      <p>Preencha as informações</p>
+    </div>
+    <form>
+      <fieldset>
+        <legend>Dados do Responsável</legend>
+        <label for="Responsável">Responsável do animal:</label>
+        <input type="text" id="Responsavel" />
+
+        <label for="CPF">CPF:</label>
+        <input
+          type="text"
+          id="cpf"
+          name="cpf"
+          maxlength="14"
+          placeholder="xxx.xxx.xxx-xx"
+        />
+
+        <label for="Contato">Contato:</label>
+        <input
+          type="tel"
+          id="Contato"
+          name="Contato"
+          pattern="\([0-9]{2}\) [0-9]{5}-[0-9]{4}"
+          placeholder="(xx) xxxxx-xxxx"
+        />
+
+        <label for="E-mail para contato">E-mail para contato:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="nome@exemplo.com"
+          required
+        />
+      </fieldset>
+
+      <fieldset>
+        <legend>Ficha de Cadastro Pet</legend>
+        <label for="Nome do animal">Nome do animal:</label>
+        <input type="text" id="nomeAnimal" />
+
+        <label for="Data de Nascimento do animal">Data de Nascimento do Pet:</label>
+        <input
+          type="date"
+          id="DataNascimentoPet"
+          name="Nascimento do pet"
+        />
+
+        <label for="Espécie">Espécie do animal:</label>
+        <input type="text" id="especie" />
+
+        <label for="Raça">Raça:</label>
+        <input type="text" id="raca" />
+
+        <div class="radio-group">
+          <label>Macho ou Fêmea?</label>
+          <input type="radio" name="genero" id="femea" value="femea" />
+          <label for="femea">Fêmea</label>
+          <input type="radio" name="genero" id="macho" value="macho" />
+          <label for="macho">Macho</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Solicitação</legend>
+        <label for="Tipo de solicitação">Solicitação:</label>
+        <textarea
+          name="solicitacao"
+          id="solicitacao"
+          rows="5"
+          placeholder="Digite aqui o que gostaria: consulta, vacina, castração, etc."
+        ></textarea>
+      </fieldset>
+
+      <button type="submit">Enviar</button>
+      <button type="reset">Limpar</button>
+    </form>
+  </body>
+</html>
